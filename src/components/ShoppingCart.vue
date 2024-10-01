@@ -7,13 +7,13 @@
         <img :src="item.image" alt="item.title" />
         <div class="item-details">
           <h3>{{ item.title }}</h3>
-          <p>\${{ item.price }} x {{ item.quantity }}</p>
+          <p>${{ item.price }} x {{ item.quantity }}</p>
           <input type="number" v-model.number="item.quantity" @change="updateQuantity(item.id, item.quantity)" min="1" />
           <button @click="removeFromCart(item.id)">Remove</button>
         </div>
       </div>
       <div class="cart-total">
-        <h3>Total: \${{ cartTotal }}</h3>
+        <h3>Total: ${{ cartTotal }}</h3>
       </div>
     </div>
   </div>
@@ -30,11 +30,11 @@ export default {
     },
   },
   methods: {
-    // delete product
+    
     removeFromCart(productId) {
       this.$emit('remove-from-cart', productId);
     },
-    // update quantite 
+  
     updateQuantity(productId, quantity) {
       this.$emit('update-quantity', productId, quantity);
     },
@@ -64,23 +64,26 @@ export default {
 
 .item-details {
   flex: 1;
+  
 }
 
 button {
   background-color: #dc3545;
   color: white;
   border: none;
-  padding: 5px 10px;
+  padding: 10px 15px; 
+  font-size: 1.2rem; 
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
 button:hover {
   background-color: #c82333;
 }
 
 input {
-  width: 50px;
+  width: 70px; 
+  padding: 10px; 
+  font-size: 1.2rem; 
   margin-right: 10px;
 }
 

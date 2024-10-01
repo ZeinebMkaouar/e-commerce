@@ -3,7 +3,7 @@
     <img :src="product.image" alt="product.title" />
     <div class="product-details">
       <h3>{{ product.title }}</h3>
-      <p>\${{ product.price }}</p>
+      <p>${{ product.price }}</p>
       <button @click="addToCart">Add to Cart</button>
     </div>
   </div>
@@ -16,7 +16,7 @@ export default {
   },
   methods: {
     addToCart() {
-      this.$emit('add-to-cart', this.product);
+      this.$emit("add-to-cart", this.product);
     },
   },
 };

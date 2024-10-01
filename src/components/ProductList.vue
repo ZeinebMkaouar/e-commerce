@@ -1,9 +1,11 @@
 <template>
+  <i class="fas fa-shopping-cart"></i>
+
   <div class="product-list">
     <h2>Products</h2>
     <div v-if="loading">Loading...</div>
     <div v-else class="products">
-       <!-- Afficher produits dans ProductItem -->
+      <!-- Afficher produits dans ProductItem -->
       <ProductItem
         v-for="product in products"
         :key="product.id"
@@ -15,8 +17,8 @@
 </template>
 
 <script>
-import axios from 'axios';
-import ProductItem from './ProductItem.vue';
+import axios from "axios";
+import ProductItem from "./ProductItem.vue";
 
 export default {
   components: { ProductItem },
@@ -27,19 +29,20 @@ export default {
     };
   },
   mounted() {
-    axios.get('https://fakestoreapi.com/products')
-      .then(response => {
+    axios
+      .get("https://fakestoreapi.com/products")
+      .then((response) => {
         this.products = response.data;
         this.loading = false;
       })
-      .catch(error => {
+      .catch((error) => {
         console.error(error);
         this.loading = false;
       });
   },
   methods: {
     handleAddToCart(product) {
-      this.$emit('add-to-cart', product);
+      this.$emit("add-to-cart", product);
     },
   },
 };
