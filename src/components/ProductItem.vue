@@ -32,8 +32,8 @@ export default {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
   display: flex;
-  flex-direction: column; /* Align items in a column */
-  justify-content: space-between; /* Space between items */
+  flex-direction: column; 
+  justify-content: space-between;
 }
 
 .product-item:hover {
@@ -49,9 +49,9 @@ export default {
 
 .product-details {
   display: flex;
-  flex-direction: column; /* Arrange details in a column */
-  justify-content: space-between; /* Space between title, price, and button */
-  flex: 1; /* Allow it to take available space */
+  flex-direction: column; 
+  justify-content: space-between; 
+  flex: 1; 
 }
 
 button {
